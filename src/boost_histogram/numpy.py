@@ -76,7 +76,9 @@ def histogramdd(
                 r = (np.amin(a[n]), np.amax(a[n]))
                 if r[0] == r[1]:
                     r = (r[0] - 0.5, r[1] + 0.5)
-            new_ax = _axis.Regular(typing.cast(int, b), r[0], r[1], underflow=False, overflow=False)
+            new_ax = _axis.Regular(
+                typing.cast(int, b), r[0], r[1], underflow=False, overflow=False
+            )
             axs.append(new_ax)
         else:
             barr: np.typing.NDArray[Any] = np.asarray(b, dtype=np.double)
